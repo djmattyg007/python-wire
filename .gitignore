@@ -34,30 +34,8 @@ htmlcov/
 nosetests.xml
 coverage.xml
 
-# Translations
-*.mo
-
-# Mr Developer
-.mr.developer.cfg
-.project
-.pydevproject
-
-# Rope
-.ropeproject
-
-# Django stuff:
-*.log
-*.pot
-
 # Sphinx documentation
 docs/_build/
 
 # Other directories
 etc/
-
-# Package stuff
-__init__.py
-
-# Sublime Project files
-*.sublime-project
-*.sublime-workspace
