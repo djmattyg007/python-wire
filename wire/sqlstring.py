@@ -69,7 +69,7 @@ class SQLString(object):
 		see Database.insert for further reference'''
 		column_values = list(columns.items())
 		column_names = ', '.join(map(cls.escapeColumn, cls.extract(column_values)))
-		values = cls.extract(column_values, 1)
+		values = list(cls.extract(column_values, 1))
 		value_string = ', '.join("?" * len(values))
 		query = "INSERT INTO {table} ({columns}) VALUES ({values})".format(table = table, columns = column_names, values = value_string)
 		return query, values
@@ -220,6 +220,6 @@ class SQLString(object):
 		like_items, equal_items = list(like.items()), list(equal.items())
 		like_str = cls.joinOperatorExpressions(cls.extract(like_items), 'AND', "LIKE")
 		equal_str = cls.joinOperatorExpressions(cls.extract(equal_items), "AND")
-		values = cls.extract(like_items, 1) + cls.extract(equal_items, 1)
+		values = list(cls.extract(like_items, 1)) + list(cls.extract(equal_items, 1))
 		return like_str, equal_str, values
-		
+

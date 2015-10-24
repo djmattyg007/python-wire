@@ -2,8 +2,8 @@
 # wire/table.py
 # The Table class provides an interface for direct Table manipulation
 
-from sqlstring import SQLString
-from cursor import ExecutionCursor
+from .sqlstring import SQLString
+from .cursor import ExecutionCursor
 
 class Table(object):
 	'''Models a Database table'''
@@ -176,4 +176,4 @@ class Table(object):
 
 		see Database.delete for further reference'''
 		return self.db.delete(self.name, **options)
-		
+

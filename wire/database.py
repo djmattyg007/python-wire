@@ -5,8 +5,8 @@
 import sqlite3
 import atexit
 
-from sqlstring import SQLString
-from cursor import ExecutionCursor
+from .sqlstring import SQLString
+from .cursor import ExecutionCursor
 
 class Database(sqlite3.Connection):
 	'''Database interface for SQLite'''
